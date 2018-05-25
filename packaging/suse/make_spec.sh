@@ -72,7 +72,7 @@ cp -R %{_dist}-%{name}/public/* %{buildroot}/%{_datadir}/velum/public
 # set the product name
 cp %{_dist}-%{name}/PRODUCT %{buildroot}/%{_datadir}/velum
 # add different logos
-cp -R %{_dist}-%{name}/app/assets/images %{buildroot}/%{_datadir}/velum/images
+cp -R %{_dist}-%{name}/app/assets/images/* %{buildroot}/%{_datadir}/velum/images
 
 %files
 %defattr(-,root,root)
