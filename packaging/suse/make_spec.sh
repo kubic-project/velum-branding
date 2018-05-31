@@ -83,5 +83,11 @@ cp -R %{_dist}-%{name}/app/assets/images/* %{buildroot}/%{_datadir}/velum/images
 %dir %{_datadir}/velum/images
 %{_datadir}/velum/images/*
 
+%if 0%{?suse_version} < 1500
+%doc LICENSE
+%else
+%license LICENSE
+%endif
+
 %changelog
 EOF
