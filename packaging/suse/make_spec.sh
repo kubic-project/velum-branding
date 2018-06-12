@@ -66,9 +66,7 @@ ExcludeArch:    %ix86
 %install
 # Install the web content
 install -d -m 0755 %{buildroot}/%{_datadir}/velum
-install -d -m 0755 %{buildroot}/%{_datadir}/velum/public
 install -d -m 0755 %{buildroot}/%{_datadir}/velum/images
-cp -R %{_dist}-%{name}/public/* %{buildroot}/%{_datadir}/velum/public
 # set the product name
 cp %{_dist}-%{name}/PRODUCT %{buildroot}/%{_datadir}/velum
 # add different logos
@@ -78,8 +76,6 @@ cp -R %{_dist}-%{name}/app/assets/images/* %{buildroot}/%{_datadir}/velum/images
 %defattr(-,root,root)
 %dir %{_datadir}/velum
 %{_datadir}/velum/PRODUCT
-%dir %{_datadir}/velum/public
-%{_datadir}/velum/public/*
 %dir %{_datadir}/velum/images
 %{_datadir}/velum/images/*
 
