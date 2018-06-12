@@ -67,10 +67,13 @@ ExcludeArch:    %ix86
 # Install the web content
 install -d -m 0755 %{buildroot}/%{_datadir}/velum
 install -d -m 0755 %{buildroot}/%{_datadir}/velum/images
+install -d -m 0755 %{buildroot}/%{_datadir}/velum/static-pages
 # set the product name
 cp %{_dist}-%{name}/PRODUCT %{buildroot}/%{_datadir}/velum
 # add different logos
 cp -R %{_dist}-%{name}/app/assets/images/* %{buildroot}/%{_datadir}/velum/images
+# add static pages
+cp -R %{_dist}-%{name}/static-pages/* %{buildroot}/%{_datadir}/velum/static-pages
 
 %files
 %defattr(-,root,root)
@@ -78,6 +81,8 @@ cp -R %{_dist}-%{name}/app/assets/images/* %{buildroot}/%{_datadir}/velum/images
 %{_datadir}/velum/PRODUCT
 %dir %{_datadir}/velum/images
 %{_datadir}/velum/images/*
+%dir %{_datadir}/velum/static-pages
+%{_datadir}/velum/static-pages/*
 
 %if 0%{?suse_version} < 1500
 %doc LICENSE
